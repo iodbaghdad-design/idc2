@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | مجلس التمور العراقي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Cairo', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-900 via-amber-800 to-stone-900 min-h-screen flex items-center justify-center p-4">
+
+    <div class="glass-effect rounded-3xl shadow-2xl w-full max-w-md p-8 border border-amber-200/20">
+        <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-600/30">
+                <i data-lucide="palmtree" class="w-10 h-10 text-white"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-stone-800 mb-2">مجلس التمور العراقي</h1>
+            <p class="text-stone-600">لوحة الإدارة</p>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label class="block text-stone-700 font-semibold mb-2">اسم المستخدم</label>
+                <div class="relative">
+                    <i data-lucide="user" class="w-5 h-5 text-stone-400 absolute right-3 top-1/2 transform -translate-y-1/2"></i>
+                    <input type="text" id="username" class="w-full pr-12 pl-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-stone-50" placeholder="أدخل اسم المستخدم" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-stone-700 font-semibold mb-2">كلمة المرور</label>
+                <div class="relative">
+                    <i data-lucide="lock" class="w-5 h-5 text-stone-400 absolute right-3 top-1/2 transform -translate-y-1/2"></i>
+                    <input type="password" id="password" class="w-full pr-12 pl-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all bg-stone-50" placeholder="أدخل كلمة المرور" required>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="remember" class="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500">
+                    <span class="text-stone-600">تذكرني</span>
+                </label>
+                <a href="#" class="text-amber-600 hover:text-amber-700 font-medium">نسيت كلمة المرور؟</a>
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 transition-all transform hover:scale-[1.02] shadow-lg shadow-amber-600/30 flex items-center justify-center gap-2">
+                <i data-lucide="log-in" class="w-5 h-5"></i>
+                دخول
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-stone-500 hover:text-amber-600 transition-colors text-sm flex items-center justify-center gap-2">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                العودة للموقع الرئيسي
+            </a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Default admin credentials (in real scenario, use proper backend)
+        const DEFAULT_USERNAME = 'admin';
+        const DEFAULT_PASSWORD = 'iraqdates2024';
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
+                // Create session
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('adminUsername', username);
+                
+                if (document.getElementById('remember').checked) {
+                    localStorage.setItem('adminRemember', 'true');
+                }
+
+                // Redirect to admin panel
+                window.location.href = 'admin.html';
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة!');
+            }
+        });
+
+        // Check if already logged in
+        if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+            window.location.href = 'admin.html';
+        }
+    </script>
+</body>
+</html>

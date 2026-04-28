@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجلس التمور العراقي | الرئيسية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-cairo bg-stone-50 text-stone-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-7 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center">
+                        <i data-lucide="palmtree" class="w-10 h-10 text-white"></i>
+                       <img src="image/logo2.jpg" alt="">
+                    </div>
+                    <span class="text-2xl font-bold text-amber-900">مجلس التمور العراقي</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">الرئيسية</a>
+                    <a href="#about" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">من نحن</a>
+                    <a href="#vision" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">رؤيتنا</a>
+                    <a href="#goals" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">أهدافنا</a>
+                    <a href="#dates" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">أنواع التمور</a>
+                    <a href="#council" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">اعضاء المجلس</a>
+                    <a href="#studies" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">الدراسات والإحصائيات</a>
+                    <a href="#ads" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">الإعلانات</a>
+                    <a href="#events" class="nav-link text-stone-600 hover:text-amber-600 font-medium transition-colors">الفعاليات</a>
+                    <a href="#contact" class="px-6 py-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition-all transform hover:scale-105">اتصل بنا</a>
+                </div>
+
+                <button class="md:hidden text-stone-600" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="flex flex-col p-6 gap-4">
+                <a href="#home" class="text-stone-600 hover:text-amber-600 font-medium">الرئيسية</a>
+                <a href="#about" class="text-stone-600 hover:text-amber-600 font-medium">من نحن</a>
+                <a href="#vision" class="text-stone-600 hover:text-amber-600 font-medium">رؤيتنا</a>
+                <a href="#goals" class="text-stone-600 hover:text-amber-600 font-medium">أهدافنا</a>
+                <a href="#dates" class="text-stone-600 hover:text-amber-600 font-medium">أنواع التمور</a>
+                <a href="#council" class="text-stone-600 hover:text-amber-600 font-medium">المجلس</a>
+                <a href="#studies" class="text-stone-600 hover:text-amber-600 font-medium">الدراسات والإحصائيات</a>
+                <a href="#ads" class="text-stone-600 hover:text-amber-600 font-medium">الإعلانات</a>
+                <a href="#events" class="text-stone-600 hover:text-amber-600 font-medium">الفعاليات</a>
+                <a href="#contact" class="text-amber-600 font-bold">اتصل بنا</a>
+            </div>
+       
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
+        <div class="absolute inset-0 z-0">
+            <img src="image/back.png" alt="نخيل" class="w-full h-full object-cover">
+            <!-- <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/40 to-transparent"></div> -->
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <div class="hero-content opacity-0 translate-y-2 0 transition-all duration-1000">
+                <div class="inline-flex items-center gap-2 mb-2 px-2 py-2 bg-amber-500/20 backdrop-blur-sm rounded-full border border-amber-400/30">
+  
+                <!-- اللوغو -->
+                <img src="image/logo.jpeg" 
+                    class="w-[12.5rem] h-[12.5rem] rounded-full object-cover  border-2 border-amber-400">
+  
+ </div>
+                    <!-- النص -->
+                   <br><br> <span class="text-amber-300 font-semibold text-stone-600"> نحو مستقبل زراعي مزدهر     </span><br>
+                <h1 class="text-7xl md:text-7xl font-bold text-stone-600 mb-6 leading-tight ">
+                    مجلس التمور
+                    <span class="text-amber-400 text-stone-600">العراقي</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-stone-800 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    نعمل على تطوير صناعة التمور العراقية وحماية إرثنا الزراعي الأصيل ونشر ثقافة التمور عالمياً
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#about" class="px-8 py-4 bg-amber-600 text-white rounded-full font-semibold hover:bg-amber-700 transition-all transform hover:scale-105 shadow-lg shadow-amber-600/30">
+                        اكتشف المزيد
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-amber-600 text-white rounded-full font-semibold hover:bg-amber-700 transition-all transform hover:scale-105 shadow-lg shadow-amber-600/30">
+                        انضم إلينا
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/70"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal-on-scroll opacity-0 translate-x-10 transition-all duration-1000">
+                    <div class="relative">
+                        <img src="image/IMG_0899.jpg" alt="تمور عراقية" class="rounded-3xl shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i data-lucide="award" class="w-7 h-7 text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-amber-900">+50</p>
+                                    <p class="text-stone-600">سنة من الخبرة لاعضاء المجلس</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-on-scroll opacity-0 -translate-x-10 transition-all duration-1000">
+                    <span class="text-amber-600 font-semibold mb-4 block">من نحن</span>
+                    <h2 class="text-4xl font-bold text-stone-800 mb-6 leading-tight">
+                        نحمل رسالة إحياء إرث النخيل العراقي الأصيل
+                    </h2>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                        يعد مجلس التمور العراقي هيئة متخصصة تأسست بهدف تطوير وتنظيم صناعة التمور في العراق. نعمل على ربط المزارعين والمنتجين والمصدرين في منظومة متكاملة تهدف إلى الارتقاء بجودة الإنتاج وتعزيز مكانة التمور العراقية في الأسواق العالمية.
+                    </p>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                        نؤمن بأن النخيل العراقي هو كنز وطني يستحق الحماية والتطوير، ونسعى لنشر الوعي بأهمية هذا المحصول الاستراتيجي ودوره في الاقتصاد الوطني.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-amber-600"></i>
+                            <span class="font-medium text-stone-700">جودة عالمية</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-amber-600"></i>
+                            <span class="font-medium text-stone-700">إرث أصيل</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-amber-600"></i>
+                            <span class="font-medium text-stone-700">تصدير متميز</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-amber-600"></i>
+                            <span class="font-medium text-stone-700">دعم المزارعين</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-24 bg-stone-100 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-600 font-semibold mb-4 block">رؤيتنا</span>
+                <h2 class="text-4xl font-bold text-stone-800 mb-6">نحو عراق زاهر بأجود أنواع التمور</h2>
+                <p class="text-stone-600 text-lg">
+                    نطمح لأن يكون العراق من أكبر مصدري التمور في العالم، وأن تكون تمورنا رمزاً للجودة والأصالة في كل بيت
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 delay-100">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-500">
+                        <i data-lucide="globe" class="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stone-800 mb-4">الريادة العالمية</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        الوصول بالتمور العراقية إلى المرتبة الأولى عالمياً من حيث الجودة والكمية والتنوع
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 delay-200">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-500">
+                        <i data-lucide="leaf" class="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stone-800 mb-4">استدامة زراعية</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        تطوير ممارسات زراعية مستدامة تحافظ على البيئة وتضمن استمرارية إنتاج النخيل للأجيال القادمة
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 delay-300">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-500">
+                        <i data-lucide="users" class="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stone-800 mb-4">تمكين المجتمع</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        بناء مجتمع زراعي قوي من خلال تدريب المزارعين ودعم الأسر الريفية وتوفير فرص عمل مستدامة
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 opacity-50"></div>
+        
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal-on-scroll opacity-0 translate-x-10 transition-all duration-1000">
+                    <span class="text-amber-600 font-semibold mb-4 block">أهدافنا</span>
+                    <h2 class="text-4xl font-bold text-stone-800 mb-8">نطمح لتحقيق أهداف سامية في خدمة الوطن</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-stone-50 transition-colors group">
+                            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-600 transition-colors">
+                                <span class="text-amber-600 font-bold text-xl group-hover:text-white transition-colors">01</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg mb-2">تطوير الإنتاج</h4>
+                                <p class="text-stone-600">زيادة الإنتاجية وتطوير سلالات جديدة من التمور العراقية عالية الجودة</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-stone-50 transition-colors group">
+                            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-600 transition-colors">
+                                <span class="text-amber-600 font-bold text-xl group-hover:text-white transition-colors">02</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg mb-2">التسويق والتصدير</h4>
+                                <p class="text-stone-600">فتح أسواق جديدة للتمور العراقية في أوروبا وآسيا وأمريكا</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-stone-50 transition-colors group">
+                            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-600 transition-colors">
+                                <span class="text-amber-600 font-bold text-xl group-hover:text-white transition-colors">03</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg mb-2">البحث والتطوير</h4>
+                                <p class="text-stone-600">إجراء دراسات علمية لتحسين جودة التمور ومقاومة الآفات</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-stone-50 transition-colors group">
+                            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-600 transition-colors">
+                                <span class="text-amber-600 font-bold text-xl group-hover:text-white transition-colors">04</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-lg mb-2">حماية النخيل</h4>
+                                <p class="text-stone-600">الحفاظ على الأصناف الأصيلة ومكافحة أمراض النخيل</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2 reveal-on-scroll opacity-0 -translate-x-10 transition-all duration-1000">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="image/منتجات.jpg" alt="نخيل" class="rounded-2xl shadow-lg w-full h-48 object-cover transform translate-y-8">
+                        <img src="image/تسويق.jpg" alt="تمور" class="rounded-2xl shadow-lg w-full h-48 object-cover">
+                        <img src="image/زراعة-النخيل-1140x570.jpg" alt="مزرعة" class="rounded-2xl shadow-lg w-full h-48 object-cover transform translate-y-8">
+                        <img src="image/بحوث.jpg" alt="حصاد" class="rounded-2xl shadow-lg w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Date Types Section -->
+    <section id="dates" class="py-24 bg-stone-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-amber-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 bg-green-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-400 font-semibold mb-4 block">أنواع التمور</span>
+                <h2 class="text-4xl font-bold mb-6">أصناف فريدة من إرثنا الزراعي</h2>
+                <p class="text-stone-400 text-lg">
+                    يتميز العراق بتنوع أصناف التمور الفاخرة التي تتميز بنكهتها الفريدة وقيمتها الغذائية العالية
+                </p>
+            </div>
+            
+            <div id="datesContainer" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3"></div>
+        </div>
+    </section>
+
+    <!-- Council Section -->
+    <section id="council" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-600 font-semibold mb-4 block">أعضاء المجلس</span>
+                <h2 class="text-4xl font-bold text-stone-800 mb-6">مجلس التمور العراقي</h2>
+                <p class="text-stone-600 text-lg">
+                    نخبة من الخبراء والمتخصصين في مجال التمور العراقية
+                </p>
+            </div>
+
+            <div id="councilContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"></div>
+        </div>
+    </section>
+
+    <!-- Studies Section -->
+    <section id="studies" class="py-24 bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-600 font-semibold mb-4 block">الدراسات والإحصائيات</span>
+                <h2 class="text-4xl font-bold text-stone-800 mb-6">أبحاث ودراسات متخصصة</h2>
+                <p class="text-stone-600 text-lg">
+                    مجموعة من الدراسات والتقارير الإحصائية حول صناعة التمور العراقية
+                </p>
+            </div>
+
+            <div id="studiesContainer" class="grid md:grid-cols-1 lg:grid-cols-2 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Ads Section -->
+    <section id="ads" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-600 font-semibold mb-4 block">الإعلانات</span>
+                <h2 class="text-4xl font-bold text-stone-800 mb-6">المعارض والفعاليات</h2>
+                <p class="text-stone-600 text-lg">
+                    تعرف على أحدث المعارض والمنتديات واللقاءات المتعلقة بصناعة التمور
+                </p>
+            </div>
+
+            <div id="adsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-24 bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-600 font-semibold mb-4 block">الفعاليات</span>
+                <h2 class="text-4xl font-bold text-stone-800 mb-6">أنشطتنا وبرامجنا المستمرة</h2>
+                <p class="text-stone-600 text-lg">
+                    ننظم فعاليات متنوعة لتعزيز الوعي بأهمية النخيل وصناعة التمور
+                </p>
+            </div>
+
+            <div id="eventsContainer" class="grid md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Council Members Section -->
+    <section id="council" class="py-24 bg-stone-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full opacity-10">
+            <div class="absolute top-20 right-20 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-64 h-64 bg-amber-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <span class="text-amber-400 font-semibold mb-4 block">أعضاء مجلس التمور العراقي  </span>
+                <h2 class="text-4xl font-bold mb-6">فريق متخصص من الخبراء</h2>
+                <p class="text-stone-400 text-lg">
+                    يضم مجلس التمور العراقي نخبة من الخبراء والمتخصصين في مختلف مجالات صناعة التمور
+                </p>
+            </div>
+            
+            <div id="councilContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal-on-scroll opacity-0 translate-x-10 transition-all duration-1000">
+                    <span class="text-amber-600 font-semibold mb-4 block">اتصل بنا</span>
+                    <h2 class="text-4xl font-bold text-stone-800 mb-6">نحن هنا لمساعدتك</h2>
+                    <p class="text-stone-600 text-lg mb-8 leading-relaxed">
+                        يمكنك التواصل معنا لأي استفسار أو اقتراح أو للانضمام إلى برامجنا. فريقنا جاهز للرد على جميع استفساراتك.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-50">
+                            <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">العنوان</h4>
+                                <p id="contactAddress" class="text-stone-600">بغداد، المنصور، شارع 14 رمضان</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-50">
+                            <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="phone" class="w-6 h-6 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">الهاتف</h4>
+                                <p id="contactPhone" class="text-stone-600">+964 770 123 4567</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-50">
+                            <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="mail" class="w-6 h-6 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">البريد الإلكتروني</h4>
+                                <p id="contactEmail" class="text-stone-600">info@iraqdates.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-on-scroll opacity-0 -translate-x-10 transition-all duration-1000">
+                    <form id="contactForm" class="bg-stone-50 p-8 rounded-3xl shadow-lg">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-stone-700 font-semibold mb-2">الاسم الكامل</label>
+                                <input id="senderName" type="text" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all" placeholder="أدخل اسمك">
+                            </div>
+                            <div>
+                                <label class="block text-stone-700 font-semibold mb-2">البريد الإلكتروني</label>
+                                <input id="senderEmail" type="email" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all" placeholder="example@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-stone-700 font-semibold mb-2">الموضوع</label>
+                            <select id="senderSubject" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all">
+                                <option>استفسار عام</option>
+                                <option>طلب انضمام</option>
+                                <option>شراكة تجارية</option>
+                                <option>شكوى أو اقتراح</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-stone-700 font-semibold mb-2">الرسالة</label>
+                            <textarea id="senderMessage" rows="5" required class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none" placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full py-4 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 transition-all transform hover:scale-[1.02] shadow-lg shadow-amber-600/30">
+                            إرسال الرسالة
+                        </button>
+
+                        <div id="formStatus" class="hidden mt-4 p-4 rounded-xl text-center font-semibold text-sm"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                     <div class="flex items-center gap-3 mb-6">
+                                             
+                       <img src="image/logo2.jpg" alt="لوغو مجلس التمور" class="w-12 h-12 rounded-full object-cover border-2 border-amber-500">
+                    </div>
+                        <span class="text-2xl font-bold">مجلس التمور العراقي</span>
+                    </div>
+                    <p class="text-stone-400 leading-relaxed mb-6 max-w-md">
+                        نعمل على تطوير صناعة التمور العراقية وتعزيز مكانة العراق كدولة رائدة في إنتاج وتصدير أجود أنواع التمور العالمية.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-amber-400">روابط سريعة</h4>
+                    <ul class="space-y-3 text-stone-400">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">من نحن</a></li>
+                        <li><a href="#vision" class="hover:text-amber-400 transition-colors">رؤيتنا</a></li>
+                        <li><a href="#goals" class="hover:text-amber-400 transition-colors">أهدافنا</a></li>
+                        <li><a href="#dates" class="hover:text-amber-400 transition-colors">أنواع التمور</a></li>
+                        <li><a href="#events" class="hover:text-amber-400 transition-colors">الفعاليات</a></li>
+                      
+                    </ul>
+                </div>
+
+                
+                </div>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 text-center text-stone-500 text-sm">
+                <p>جميع الحقوق محفوظة © 2024 مجلس التمور العراقي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ==========================================
+        // ضع هنا بياناتك من EmailJS
+        // ==========================================
+        const EMAILJS_PUBLIC_KEY  = 'g3834WfjXP4XcYhm1';
+        const EMAILJS_SERVICE_ID  = 'service_v5w9bbo';
+        const EMAILJS_TEMPLATE_ID = 'template_48er2pf';
+        // ==========================================
+
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name    = document.getElementById('senderName').value.trim();
+            const email   = document.getElementById('senderEmail').value.trim();
+            const subject = document.getElementById('senderSubject').value;
+            const message = document.getElementById('senderMessage').value.trim();
+            const btn     = document.getElementById('submitBtn');
+            const status  = document.getElementById('formStatus');
+
+            if (!name || !email || !message) {
+                status.className = 'mt-4 p-4 rounded-xl text-center font-semibold text-sm bg-red-100 text-red-700';
+                status.textContent = 'يرجى ملء جميع الحقول المطلوبة';
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'جاري الإرسال...';
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
+            status.className = 'hidden';
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                from_name:  name,
+                from_email: email,
+                subject:    subject,
+                message:    message
+            })
+            .then(function() {
+                status.className = 'mt-4 p-4 rounded-xl text-center font-semibold text-sm bg-green-100 text-green-700';
+                status.textContent = '✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                console.error('EmailJS error:', error);
+                status.className = 'mt-4 p-4 rounded-xl text-center font-semibold text-sm bg-red-100 text-red-700';
+                status.textContent = '❌ حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
+            })
+            .finally(function() {
+                btn.disabled = false;
+                btn.textContent = 'إرسال الرسالة';
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            });
+        });
+    </script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+
+const EVENTS_STORAGE_KEY = 'iraq_dates_events';
+const DATES_STORAGE_KEY = 'iraq_dates_types';
+const SETTINGS_STORAGE_KEY = 'iraq_dates_settings';
+
+function loadEvents() {
+    const events = JSON.parse(localStorage.getItem(EVENTS_STORAGE_KEY) || '[]');
+    const container = document.getElementById("eventsContainer");
+    if (!container) return;
+    container.innerHTML = "";
+
+    events.forEach(event => {
+        container.innerHTML += `
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+            <div class="h-48 overflow-hidden relative">
+                <img src="${event.image}" class="w-full h-full object-cover">
+                <div class="absolute top-4 right-4 bg-amber-600 text-white px-4 py-2 rounded-full text-sm">
+                    ${event.type}
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">${event.title}</h3>
+                <p class="text-stone-600 mb-3">${event.description}</p>
+                <p>${event.date}</p>
+                <p>${event.location}</p>
+            </div>
+        </div>
+        `;
+    });
+}
+
+function loadDates() {
+    const dates = JSON.parse(localStorage.getItem(DATES_STORAGE_KEY) || '[]');
+    const container = document.getElementById('datesContainer');
+    if (!container) return;
+
+    if (dates.length === 0) {
+        container.innerHTML = '<p class="text-center text-white col-span-4">لا توجد أنواع تمور مضافة حالياً. الرجاء تحديث البيانات من لوحة التحكم.</p>';
+        return;
+    }
+
+    container.innerHTML = '';
+    dates.forEach(date => {
+        container.innerHTML += `
+        <div class="group relative overflow-hidden rounded-xl bg-stone-800 hover:bg-stone-700 transition-all">
+            <div class="overflow-hidden" style="height: 130px;">
+                <img src="${date.image}" alt="${date.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="p-3">
+                <h3 class="text-sm font-bold text-amber-400 mb-1">${date.name}</h3>
+                <p class="text-stone-400 text-xs mb-2 line-clamp-2">${date.description}</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs text-stone-500">الحجم: ${date.size}</span>
+                    <span class="text-xs text-amber-500 font-semibold">${date.classification}</span>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+}
+
+function loadSiteSettings() {
+    const settings = JSON.parse(localStorage.getItem(SETTINGS_STORAGE_KEY) || '{}');
+    if (settings.siteTitle) {
+        document.title = `${settings.siteTitle} | الرئيسية`;
+    }
+    const addr = document.getElementById('contactAddress');
+    if (addr) addr.textContent = settings.address || 'بغداد، المنصور، شارع 14 رمضان';
+    const phone = document.getElementById('contactPhone');
+    if (phone) phone.textContent = settings.phone || '+964 770 123 4567';
+    const email = document.getElementById('contactEmail');
+    if (email) email.textContent = settings.email || 'idcouncil25@gmail.com';
+}
+
+window.onload = function() {
+    loadEvents();
+    loadDates();
+    loadSiteSettings();
+};
+
+window.addEventListener('storage', function(event) {
+    if (event.key === EVENTS_STORAGE_KEY) {
+        loadEvents();
+    }
+    if (event.key === DATES_STORAGE_KEY) {
+        loadDates();
+    }
+    if (event.key === SETTINGS_STORAGE_KEY) {
+        loadSiteSettings();
+    }
+});
+</script>
+</body>
+</html>
