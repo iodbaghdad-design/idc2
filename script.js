@@ -1,5 +1,83 @@
 // Initialize Lucide Icons
-document.addEventListener('DOMContentLoaded', function() {
+
+// ── Firebase Configuration & Storage ──────────────────────────────────────────
+const FIREBASE_CONFIG = {
+    apiKey: 'AIzaSyD2Y9jQF7XWmo0uegj3uWrQfTKbCAcH97o',
+    authDomain: 'id-council-c1b1d.firebaseapp.com',
+    projectId: 'id-council-c1b1d',
+    storageBucket: 'id-council-c1b1d.firebasestorage.app',
+    messagingSenderId: '2987746191',
+    appId: '1:2987746191:web:e8f267db34eb0a903b21fa'
+};
+
+const FIRESTORE_COLLECTION = 'siteData';
+const StorageKeys = {
+    EVENTS: 'iraq_dates_events',
+    DATES: 'iraq_dates_types',
+    MESSAGES: 'iraq_dates_messages',
+    SETTINGS: 'iraq_dates_settings',
+    COUNCIL: 'iraq_dates_council',
+    STUDIES: 'iraq_dates_studies',
+    ADS: 'iraq_dates_ads'
+};
+
+// Cache shared with localStorage as fallback
+const _fbCache = new Map();
+
+function _fbGet(key) {
+    if (_fbCache.has(key)) return _fbCache.get(key);
+    return window.localStorage.getItem(key);
+}
+
+async function _initFirebase() {
+    try {
+        const [{ initializeApp, getApps, getApp }, firestoreModule] = await Promise.all([
+            import('https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js'),
+            import('https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js')
+        ]);
+        const { getFirestore, doc, getDoc, onSnapshot } = firestoreModule;
+        const app = getApps().length ? getApp() : initializeApp(FIREBASE_CONFIG);
+        const db = getFirestore(app);
+
+        await Promise.all(Object.values(StorageKeys).map(async (key) => {
+            const docRef = doc(db, FIRESTORE_COLLECTION, key);
+            const snapshot = await getDoc(docRef);
+            if (snapshot.exists()) {
+                const val = String(snapshot.data().value ?? '');
+                _fbCache.set(key, val);
+                window.localStorage.setItem(key, val);
+            }
+            // Real-time sync
+            onSnapshot(docRef, (next) => {
+                if (!next.exists()) { _fbCache.delete(key); window.localStorage.removeItem(key); return; }
+                const val = String(next.data().value ?? '');
+                _fbCache.set(key, val);
+                window.localStorage.setItem(key, val);
+                // Re-render the relevant section if it's visible
+                _refreshSection(key);
+            });
+        }));
+    } catch (e) {
+        console.warn('Firebase unavailable in script.js, using localStorage:', e);
+    }
+}
+
+function _refreshSection(key) {
+    const map = {
+        [StorageKeys.DATES]:   loadDatesData,
+        [StorageKeys.COUNCIL]: loadCouncilData,
+        [StorageKeys.STUDIES]: loadStudiesData,
+        [StorageKeys.EVENTS]:  loadEventsData,
+        [StorageKeys.ADS]:     loadAdsData,
+    };
+    if (map[key]) map[key]();
+}
+
+// Start Firebase init immediately; data loading waits for it
+const _firebaseReady = _initFirebase();
+// ──────────────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', async function() {
     lucide.createIcons();
     
     // Initialize all animations and interactions
@@ -9,7 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initCounterAnimation();
     
-    // Load data from localStorage
+    // Wait for Firebase to populate cache, then load data
+    await _firebaseReady;
     loadDatesData();
     loadEventsData();
     loadCouncilData();
@@ -214,7 +293,7 @@ window.addEventListener('scroll', () => {
 
 // Studies Data Loading
 function loadStudiesData() {
-    const studies = JSON.parse(localStorage.getItem('iraq_dates_studies') || '[]');
+    const studies = JSON.parse(_fbGet('iraq_dates_studies') || '[]');
     const container = document.getElementById('studiesContainer');
     
     if (!container) return;
@@ -250,7 +329,7 @@ function loadStudiesData() {
 
 // Ads Data Loading
 function loadAdsData() {
-    const ads = JSON.parse(localStorage.getItem('iraq_dates_ads') || '[]');
+    const ads = JSON.parse(_fbGet('iraq_dates_ads') || '[]');
     const container = document.getElementById('adsContainer');
     
     if (!container) return;
@@ -286,7 +365,7 @@ function loadAdsData() {
 }
 
 function downloadStudy(fileName) {
-    const studies = JSON.parse(localStorage.getItem('iraq_dates_studies') || '[]');
+    const studies = JSON.parse(_fbGet('iraq_dates_studies') || '[]');
     const study = studies.find(item => Number(item.id) === Number(fileName));
     
     if (!study || !study.fileData) {
@@ -391,7 +470,7 @@ document.querySelectorAll('button, .btn-glow').forEach(button => {
 
 // Load Data Functions
 function loadDatesData() {
-    const dates = JSON.parse(localStorage.getItem('iraq_dates_types') || '[]');
+    const dates = JSON.parse(_fbGet('iraq_dates_types') || '[]');
     const container = document.getElementById('datesContainer');
     
     if (dates.length === 0) {
@@ -424,7 +503,7 @@ function loadDatesData() {
 }
 
 function loadEventsData() {
-    const events = JSON.parse(localStorage.getItem('iraq_dates_events') || '[]');
+    const events = JSON.parse(_fbGet('iraq_dates_events') || '[]');
     const container = document.getElementById('eventsContainer');
     
     if (events.length === 0) {
@@ -463,7 +542,7 @@ function loadEventsData() {
 }
 
 function loadCouncilData() {
-    const council = JSON.parse(localStorage.getItem('iraq_dates_council') || '[]');
+    const council = JSON.parse(_fbGet('iraq_dates_council') || '[]');
     const container = document.getElementById('councilContainer');
     
     if (council.length === 0) {
@@ -550,7 +629,7 @@ function createMemberModal() {
 }
 
 function openMemberModal(index) {
-    const council = JSON.parse(localStorage.getItem('iraq_dates_council') || '[]');
+    const council = JSON.parse(_fbGet('iraq_dates_council') || '[]');
     const member = council[index];
     if (!member) return;
 

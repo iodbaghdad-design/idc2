@@ -96,25 +96,27 @@ async function initializeFirebaseStore() {
             const snapshot = await getDoc(docRef);
 
             if (snapshot.exists()) {
+                // Firebase has data → always use it as the source of truth
                 const remoteValue = String(snapshot.data().value ?? '');
                 firebaseCache.set(key, remoteValue);
                 window.localStorage.setItem(key, remoteValue);
-                return;
+            } else {
+                // Firebase has no data yet → push local data up if available
+                const localValue = window.localStorage.getItem(key);
+                if (localValue !== null) {
+                    firebaseCache.set(key, localValue);
+                    await firebaseDocApi.set(key, localValue);
+                }
+                // If neither exists, leave empty — initializeData() will create defaults
             }
 
-            const localValue = window.localStorage.getItem(key);
-            if (localValue !== null) {
-                firebaseCache.set(key, localValue);
-                await firebaseDocApi.set(key, localValue);
-            }
-
+            // Register real-time listener to keep cache in sync
             onSnapshot(docRef, (nextSnapshot) => {
                 if (!nextSnapshot.exists()) {
                     firebaseCache.delete(key);
                     window.localStorage.removeItem(key);
                     return;
                 }
-
                 const remoteValue = String(nextSnapshot.data().value ?? '');
                 firebaseCache.set(key, remoteValue);
                 window.localStorage.setItem(key, remoteValue);
@@ -193,9 +195,14 @@ function validateFile(file, allowedMimeTypes, maxBytes, label) {
     return '';
 }
 
-// Initialize default data if not exists
+// Initialize default data if not exists — called AFTER firebaseReady resolves
 function initializeData() {
-    if (!getfirebase.getItem(StorageKeys.EVENTS)) {
+    // Helper: only write defaults when Firebase + localStorage have no value
+    function needsDefault(key) {
+        return !getfirebase.getItem(key);
+    }
+
+    if (needsDefault(StorageKeys.EVENTS)) {
         const defaultEvents = [
             {
                 id: 1,
@@ -228,7 +235,7 @@ function initializeData() {
         getfirebase.setItem(StorageKeys.EVENTS, JSON.stringify(defaultEvents));
     }
 
-    if (!getfirebase.getItem(StorageKeys.DATES)) {
+    if (needsDefault(StorageKeys.DATES)) {
         const defaultDates = [
             {
                 id: 1,
@@ -266,7 +273,7 @@ function initializeData() {
         getfirebase.setItem(StorageKeys.DATES, JSON.stringify(defaultDates));
     }
 
-    if (!getfirebase.getItem(StorageKeys.SETTINGS)) {
+    if (needsDefault(StorageKeys.SETTINGS)) {
         const defaultSettings = {
             siteTitle: 'مجلس التمور العراقي',
             email: 'idcouncil@gmail.com',
@@ -277,7 +284,7 @@ function initializeData() {
         getfirebase.setItem(StorageKeys.SETTINGS, JSON.stringify(defaultSettings));
     }
 
-    if (!getfirebase.getItem(StorageKeys.COUNCIL)) {
+    if (needsDefault(StorageKeys.COUNCIL)) {
         const defaultCouncil = [
             {
                 id: 1,
@@ -343,7 +350,7 @@ function initializeData() {
         getfirebase.setItem(StorageKeys.COUNCIL, JSON.stringify(defaultCouncil));
     }
 
-    if (!getfirebase.getItem(StorageKeys.STUDIES)) {
+    if (needsDefault(StorageKeys.STUDIES)) {
         const defaultStudies = [
             {
                 id: 1,
@@ -363,7 +370,7 @@ function initializeData() {
         getfirebase.setItem(StorageKeys.STUDIES, JSON.stringify(defaultStudies));
     }
 
-    if (!getfirebase.getItem(StorageKeys.ADS)) {
+    if (needsDefault(StorageKeys.ADS)) {
         const defaultAds = [
             {
                 id: 1,
